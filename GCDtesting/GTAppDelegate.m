@@ -7,6 +7,7 @@
 //
 
 #import "GTAppDelegate.h"
+#import "GCTestingGCD.h"
 
 @implementation GTAppDelegate
 
@@ -14,6 +15,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    GCTestingGCD *test = [[GCTestingGCD alloc] init];
+    [test performExecutionWithBlocks];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
